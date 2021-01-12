@@ -1,0 +1,189 @@
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again
+$ touch third.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again
+$ git init
+Initialized empty Git repository in C:/Users/Red Stars/Desktop/learn_git_again/.git/
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git add third.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) 89d5272] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit 89d52725acb270027aa2eb791032662500b7bb9b (HEAD -> master)
+Author: Sofiene-Saguem <Sofiene.saguem2@gmail.com>
+Date:   Tue Jan 12 14:50:17 2021 +0100
+
+    adding third.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ touch fourth.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m ""
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fourth.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "
+> git commit -m "adding fourth.txt"
+>
+> $ git add fourth.txt
+> git commit -m "
+git commit -m "adding fourth.txt"
+
+$ git add fourth.txt
+error: pathspec 'fourth.txt
+
+$ git add fourth.txt
+git commit -m ' did not match any file(s) known to git
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fourth.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash: $: command not found
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git add fourth.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "adding fourth.txt"
+[master 0200fa6] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git rm third.txt
+rm 'third.txt'
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "update"
+[master c10abc3] update
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git update
+Warning! `git update` has been deprecated;
+Please use `git update-git-for-windows` instead.
+Git for Windows 2.29.2.windows.3 (64bit)
+Update 2.30.0.windows.1 is available
+Download and install Git for Windows 2.30.0 [N/y]? N
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git commit -m "removing third.txt"
+On branch master
+nothing to commit, working tree clean
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git log
+commit c10abc3bbc2f583f9daf3c7d537801a32bbe5ec4 (HEAD -> master)
+Author: Sofiene-Saguem <Sofiene.saguem2@gmail.com>
+Date:   Tue Jan 12 14:57:33 2021 +0100
+
+    update
+
+commit 0200fa65714081276cd83a1f1ab02a50dceabea3
+Author: Sofiene-Saguem <Sofiene.saguem2@gmail.com>
+Date:   Tue Jan 12 14:56:27 2021 +0100
+
+    adding fourth.txt
+
+commit 89d52725acb270027aa2eb791032662500b7bb9b
+Author: Sofiene-Saguem <Sofiene.saguem2@gmail.com>
+Date:   Tue Jan 12 14:50:17 2021 +0100
+
+    adding third.txt
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global core.pager cat
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global list
+error: key does not contain a section: list
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+user.email=Sofiene.saguem2@gmail.com
+user.name=Sofiene-Saguem
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+Red Stars@DESKTOP-P575HMR MINGW64 ~/Desktop/learn_git_again (master)
+$
